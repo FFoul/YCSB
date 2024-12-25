@@ -138,16 +138,17 @@ public class BasicDB extends DB {
 
     if (verbose) {
       StringBuilder sb = getStringBuilder();
-      sb.append("READ ").append(table).append(" ").append(key).append(" [ ");
-      if (fields != null) {
-        for (String f : fields) {
-          sb.append(f).append(" ");
-        }
-      } else {
-        sb.append("<all fields>");
-      }
-
-      sb.append("]");
+//      sb.append("READ ").append(table).append(" ").append(key).append(" [ ");
+//      if (fields != null) {
+//        for (String f : fields) {
+//          sb.append(f).append(" ");
+//        }
+//      } else {
+//        sb.append("<all fields>");
+//      }
+//
+//      sb.append("]");
+      sb.append("READ ").append(key);
       System.out.println(sb);
     }
 
@@ -240,14 +241,15 @@ public class BasicDB extends DB {
 
     if (verbose) {
       StringBuilder sb = getStringBuilder();
-      sb.append("INSERT ").append(table).append(" ").append(key).append(" [ ");
-      if (values != null) {
-        for (Map.Entry<String, ByteIterator> entry : values.entrySet()) {
-          sb.append(entry.getKey()).append("=").append(entry.getValue()).append(" ");
-        }
-      }
-
-      sb.append("]");
+//      sb.append("INSERT ").append(table).append(" ").append(key).append(" [ ");
+//      if (values != null) {
+//        for (Map.Entry<String, ByteIterator> entry : values.entrySet()) {
+//          sb.append(entry.getKey()).append("=").append(entry.getValue()).append(" ");
+//        }
+//      }
+//
+//      sb.append("]");
+      sb.append("INSERT ").append(" ").append(key);
       System.out.println(sb);
     }
 
