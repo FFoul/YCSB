@@ -249,7 +249,7 @@ fi
 YCSB_ARGS=$(echo "$@" | cut -d' ' -f3-)
 
 # About to run YCSB
-echo "$JAVA_HOME/bin/java $JAVA_OPTS -classpath $CLASSPATH $YCSB_CLASS $YCSB_COMMAND -db $BINDING_CLASS $YCSB_ARGS"
+# echo "$JAVA_HOME/bin/java $JAVA_OPTS -classpath $CLASSPATH $YCSB_CLASS $YCSB_COMMAND -db $BINDING_CLASS $YCSB_ARGS"
 
 # Run YCSB
 # Shellcheck reports the following line as needing double quotes to prevent

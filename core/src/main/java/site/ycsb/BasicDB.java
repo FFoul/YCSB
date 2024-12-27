@@ -87,15 +87,15 @@ public class BasicDB extends DB {
     count = Boolean.parseBoolean(getProperties().getProperty(COUNT, COUNT_DEFAULT));
     if (verbose) {
       synchronized (System.out) {
-        System.out.println("***************** properties *****************");
+//        System.out.println("***************** properties *****************");
         Properties p = getProperties();
         if (p != null) {
           for (Enumeration e = p.propertyNames(); e.hasMoreElements();) {
             String k = (String) e.nextElement();
-            System.out.println("\"" + k + "\"=\"" + p.getProperty(k) + "\"");
+//            System.out.println("\"" + k + "\"=\"" + p.getProperty(k) + "\"");
           }
         }
-        System.out.println("**********************************************");
+//        System.out.println("**********************************************");
       }
     }
     
@@ -249,8 +249,11 @@ public class BasicDB extends DB {
 //      }
 //
 //      sb.append("]");
-      sb.append("INSERT ").append(" ").append(key);
+//      sb.append("INSERT ").append(" ").append(key);
+      sb.append(key);
+
       System.out.println(sb);
+
     }
 
     if (count) {
