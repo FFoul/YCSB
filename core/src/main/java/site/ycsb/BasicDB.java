@@ -148,6 +148,7 @@ public class BasicDB extends DB {
 //      }
 //
 //      sb.append("]");
+
       sb.append("READ ").append(key);
       System.out.println(sb);
     }
@@ -250,7 +251,9 @@ public class BasicDB extends DB {
 //
 //      sb.append("]");
 //      sb.append("INSERT ").append(" ").append(key);
-      sb.append(key);
+      // delete "user" in the head of key
+      String newKey = key.replaceFirst("^user", "");
+      sb.append(newKey);
 
       System.out.println(sb);
 
