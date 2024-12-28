@@ -237,35 +237,35 @@ public final class Client {
         exporter = new TextMeasurementsExporter(out);
       }
 
-      exporter.write("OVERALL", "RunTime(ms)", runtime);
+      //exporter.write("OVERALL", "RunTime(ms)", runtime);
       double throughput = 1000.0 * (opcount) / (runtime);
-      exporter.write("OVERALL", "Throughput(ops/sec)", throughput);
+      //exporter.write("OVERALL", "Throughput(ops/sec)", throughput);
 
       final Map<String, Long[]> gcs = Utils.getGCStatst();
       long totalGCCount = 0;
       long totalGCTime = 0;
       for (final Entry<String, Long[]> entry : gcs.entrySet()) {
-        exporter.write("TOTAL_GCS_" + entry.getKey(), "Count", entry.getValue()[0]);
-        exporter.write("TOTAL_GC_TIME_" + entry.getKey(), "Time(ms)", entry.getValue()[1]);
-        exporter.write("TOTAL_GC_TIME_%_" + entry.getKey(), "Time(%)",
-            ((double) entry.getValue()[1] / runtime) * (double) 100);
+        //exporter.write("TOTAL_GCS_" + entry.getKey(), "Count", entry.getValue()[0]);
+        //exporter.write("TOTAL_GC_TIME_" + entry.getKey(), "Time(ms)", entry.getValue()[1]);
+        //exporter.write("TOTAL_GC_TIME_%_" + entry.getKey(), "Time(%)",
+//            ((double) entry.getValue()[1] / runtime) * (double) 100);
         totalGCCount += entry.getValue()[0];
         totalGCTime += entry.getValue()[1];
       }
-      exporter.write("TOTAL_GCs", "Count", totalGCCount);
+      //exporter.write("TOTAL_GCs", "Count", totalGCCount);
 
-      exporter.write("TOTAL_GC_TIME", "Time(ms)", totalGCTime);
-      exporter.write("TOTAL_GC_TIME_%", "Time(%)", ((double) totalGCTime / runtime) * (double) 100);
+      //exporter.write("TOTAL_GC_TIME", "Time(ms)", totalGCTime);
+      //exporter.write("TOTAL_GC_TIME_%", "Time(%)", ((double) totalGCTime / runtime) * (double) 100);
       if (statusthread != null && statusthread.trackJVMStats()) {
-        exporter.write("MAX_MEM_USED", "MBs", statusthread.getMaxUsedMem());
-        exporter.write("MIN_MEM_USED", "MBs", statusthread.getMinUsedMem());
-        exporter.write("MAX_THREADS", "Count", statusthread.getMaxThreads());
-        exporter.write("MIN_THREADS", "Count", statusthread.getMinThreads());
-        exporter.write("MAX_SYS_LOAD_AVG", "Load", statusthread.getMaxLoadAvg());
-        exporter.write("MIN_SYS_LOAD_AVG", "Load", statusthread.getMinLoadAvg());
+        //exporter.write("MAX_MEM_USED", "MBs", statusthread.getMaxUsedMem());
+        //exporter.write("MIN_MEM_USED", "MBs", statusthread.getMinUsedMem());
+        //exporter.write("MAX_THREADS", "Count", statusthread.getMaxThreads());
+        //exporter.write("MIN_THREADS", "Count", statusthread.getMinThreads());
+        //exporter.write("MAX_SYS_LOAD_AVG", "Load", statusthread.getMaxLoadAvg());
+        //exporter.write("MIN_SYS_LOAD_AVG", "Load", statusthread.getMinLoadAvg());
       }
 
-      Measurements.getMeasurements().exportMeasurements(exporter);
+//      Measurements.getMeasurements().exportMeasurements(exporter);
     } finally {
       if (exporter != null) {
         exporter.close();
